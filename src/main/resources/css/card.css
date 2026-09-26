@@ -1,0 +1,160 @@
+.card {
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #292f34;
+    -fx-border-width: 1px;
+}
+
+.card .image-view {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 5, 0, 0, 0);
+}
+
+.card-order {
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #292f34;
+    -fx-border-width: 1px;
+}
+
+.card-order .image-view {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 5, 0, 0, 0);
+}
+
+
+.btn-ingredient {
+    -fx-background-color: linear-gradient(to bottom right, #e9c46a, #f4a261);
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(233, 196, 106, 0.35), 10, 0.3, 0, 3);
+}
+
+.btn-ingredient:hover {
+    -fx-background-color: linear-gradient(to bottom right, #f4a261, #e9c46a);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(gaussian, rgba(233, 196, 106, 0.5), 14, 0.5, 0, 4);
+}
+
+.btn-ingredient:pressed {
+    -fx-background-color: #d4a24a;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.22), 8, 0.3, 0, 2);
+}
+
+.btn-dish {
+    -fx-background-color: linear-gradient(to bottom right, #2a9d8f, #287271);
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(42, 157, 143, 0.35), 10, 0.3, 0, 3);
+}
+
+.btn-dish:hover {
+    -fx-background-color: linear-gradient(to bottom right, #2fb3a3, #2a9d8f);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(gaussian, rgba(42, 157, 143, 0.5), 14, 0.5, 0, 4);
+}
+
+.btn-dish:pressed {
+    -fx-background-color: #287271;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.22), 8, 0.3, 0, 2);
+}
+
+.btn-product {
+    -fx-background-color: linear-gradient(to bottom right, #e76f51, #d95d3a);
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(231, 111, 81, 0.35), 10, 0.3, 0, 3);
+}
+
+.btn-product:hover {
+    -fx-background-color: linear-gradient(to bottom right, #f1916d, #e76f51);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(gaussian, rgba(231, 111, 81, 0.5), 14, 0.5, 0, 4);
+}
+
+.btn-product:pressed {
+    -fx-background-color: #c74a2e;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.22), 8, 0.3, 0, 2);
+}
+
+.card-container {
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+}
+
+.card-container:hover {
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 15, 0.4, 0, 5);
+}
+
+.white-bg{
+    -fx-background-color: #fff;
+}
+
+.radius{
+    -fx-background-radius: 8px;
+}
+
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
+}
+
+.background-name{
+    -fx-background-color: #f3ca52;
+    -fx-background-radius: 20 20 0 0;
+}
+
+.background-price{
+    -fx-background-color: #292f34;
+}
+
+.btn-add {
+    -fx-background-color: #77916f;
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.btn-add:hover {
+    -fx-background-color: #45a049;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.btn-add:pressed {
+    -fx-background-color: #3d8b40;
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+.btnAdd {
+    -fx-background-color: linear-gradient(to bottom right, #77916f, #77916f);
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 0 0 20 20;
+    -fx-cursor: hand;
+}
+
+.btnAdd:hover {
+    -fx-background-color: linear-gradient(to bottom right, #8aa585, #93ad8e);
+    -fx-effect: dropshadow(gaussian, rgba(233, 196, 106, 0.45), 14, 0.35, 0, 5);
+}
+
+.btnAdd:pressed {
+    -fx-background-color: linear-gradient(to bottom, #6c8366, #5e7458); 
+    -fx-text-fill: #ffffff;
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.35), 6, 0.25, 0, 1); 
+}

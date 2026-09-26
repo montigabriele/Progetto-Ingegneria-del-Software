@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="810.0" maxWidth="1440.0" minHeight="810.0" minWidth="1440.0" prefHeight="810.0" prefWidth="1440.0" styleClass="background-menu" stylesheets="@../css/customer.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.foodmood.view.ui.gui.customer.GuiCustomerCart">
+   <columnConstraints>
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="288.0" minWidth="288.0" percentWidth="20.0" prefWidth="288.0" />
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="864.0" minWidth="864.0" percentWidth="60.0" prefWidth="864.0" />
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="288.0" minWidth="288.0" percentWidth="20.0" prefWidth="288.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="810.0" minHeight="810.0" prefHeight="810.0" vgrow="ALWAYS" />
+   </rowConstraints>
+   <children>
+      <VBox>
+         <children>
+            <HBox alignment="CENTER_LEFT" minHeight="150.0" prefHeight="150.0">
+               <children>
+                  <ImageView fitHeight="120.0" fitWidth="250.0" onMouseClicked="#onBackToHomePage" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logo_restaurant.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </HBox>
+            <Region prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </VBox>
+      <AnchorPane prefHeight="450.0" prefWidth="200.0" stylesheets="@../css/login.css" GridPane.columnIndex="1">
+         <children>
+            <BorderPane fx:id="accountPane" prefWidth="450.0" styleClass="vbox-login" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="130.0" AnchorPane.topAnchor="35.0">
+               <center>
+                  <VBox alignment="CENTER" minWidth="450.0" prefHeight="450.0" spacing="10.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox alignment="CENTER" spacing="10.0" VBox.vgrow="NEVER">
+                           <children>
+                              <Label alignment="CENTER" text="Ordine" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Arial Black" size="42.0" />
+                                 </font>
+                              </Label>
+                              <HBox>
+                                 <children>
+                                    <TableView fx:id="tblOrder" maxWidth="540.0" minWidth="540.0" prefHeight="540.0" prefWidth="540.0">
+                                      <columns>
+                                        <TableColumn fx:id="colProduct" prefWidth="285.0" text="Articolo" />
+                                        <TableColumn fx:id="colQty" minWidth="0.0" prefWidth="100.0" text="Quantità" />
+                                          <TableColumn fx:id="colPrice" minWidth="0.0" prefWidth="100.0" text="Prezzo" />
+                                          <TableColumn fx:id="colDelete" prefWidth="50.0" />
+                                      </columns>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </TableView>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" spacing="5.0">
+                                 <children>
+                                    <Label text="Totale:">
+                                       <font>
+                                          <Font name="Arial Black" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblTotalOrder" layoutX="200.0" layoutY="10.0" text="100€">
+                                       <font>
+                                          <Font name="Arial Black" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="15.0" />
+                           </padding>
+                        </VBox>
+                        <Region minHeight="5.0" VBox.vgrow="SOMETIMES" />
+                        <VBox alignment="CENTER" spacing="20.0" VBox.vgrow="NEVER">
+                           <children>
+                              <Button fx:id="btnOrder" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minHeight="50.0" mnemonicParsing="false" onAction="#onOrder" prefHeight="50.0" styleClass="normalBtn">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label text="Ordina" textAlignment="CENTER" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </VBox>
+                        <Region minHeight="10.0" />
+                     </children>
+                     <BorderPane.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </BorderPane.margin>
+                  </VBox>
+               </center>
+               <top>
+                  <HBox prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                     <padding>
+                        <Insets left="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </top>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+      <VBox alignment="TOP_RIGHT" GridPane.columnIndex="2">
+         <children>
+            <HBox alignment="CENTER_RIGHT" minHeight="150.0" prefHeight="150.0" spacing="15.0">
+               <children>
+                  <Button fx:id="btnCart" alignment="CENTER" contentDisplay="CENTER" minHeight="45.0" minWidth="100.0" mnemonicParsing="false" onAction="#onCartClicked" styleClass="btnCart" textAlignment="CENTER">
+                     <font>
+                        <Font name="Arial Bold" size="24.0" />
+                     </font>
+                     <graphic>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/receipt.png" />
+                                 </image>
+                              </ImageView>
+                              <Label contentDisplay="CENTER" text="ORDINE" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnAccount" alignment="CENTER" contentDisplay="CENTER" layoutX="261.0" layoutY="63.0" minHeight="45.0" minWidth="100.0" mnemonicParsing="false" onAction="#onAccountClicked" styleClass="btnAccount" stylesheets="@../css/customer.css" textAlignment="CENTER">
+                     <font>
+                        <Font name="Arial Bold" size="24.0" />
+                     </font>
+                     <graphic>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label contentDisplay="CENTER">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </Label>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/account.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="lblUserInitials" contentDisplay="CENTER">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </HBox>
+            <Region prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </VBox>
+   </children>
+</GridPane>

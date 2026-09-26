@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1440.0" stylesheets="@../css/manager.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.foodmood.view.ui.gui.manager.GuiHomeManager">
+   <children>
+      <AnchorPane fx:id="mainForm" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="397.0" layoutY="163.0" prefHeight="810.0" prefWidth="1440.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <AnchorPane prefHeight="810.0" prefWidth="300.0" styleClass="background-left" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="68.0" layoutY="278.0" prefHeight="810.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="50.0" layoutY="-25.0" prefHeight="150.0" prefWidth="300.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox alignment="CENTER" layoutX="50.0" layoutY="25.0" prefHeight="150.0" prefWidth="300.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="30.0">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/logo_restaurant.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                              <Label fx:id="lblManager" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="188.0" prefHeight="21.0" prefWidth="301.0" text="Manager" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <VBox alignment="CENTER" layoutY="210.0" prefHeight="600.0" prefWidth="300.0" spacing="20.0">
+                                 <children>
+                                    <Button fx:id="btnHome" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchForm" prefHeight="45.0" prefWidth="280.0" styleClass="menuBtn">
+                                       <font>
+                                          <Font name="Arial Bold" size="18.0" />
+                                       </font>
+                                       <graphic>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                             <children>
+                                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../icons/home.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label text="HOME" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="btnManagmentDishes" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="270.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="45.0" prefWidth="280.0" styleClass="menuBtn">
+                                       <font>
+                                          <Font name="Arial Bold" size="18.0" />
+                                       </font>
+                                       <graphic>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                             <children>
+                                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../icons/dinner-white.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label text="GESTIONE PIATTI" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="btnManagmentIngredients" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="247.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="45.0" prefWidth="280.0" styleClass="menuBtn">
+                                       <font>
+                                          <Font name="Arial Bold" size="18.0" />
+                                       </font>
+                                       <graphic>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                             <children>
+                                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../icons/Ingredient.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label text="GESTIONE INGREDIENTI" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="btnManagmentRestaurantRoom" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="214.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="45.0" prefWidth="280.0" styleClass="menuBtn">
+                                       <font>
+                                          <Font name="Arial Bold" size="18.0" />
+                                       </font>
+                                       <graphic>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                             <children>
+                                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../icons/table-white.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label text="GESTIONE SALA" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="btnManagmentEmployees" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="303.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="45.0" prefWidth="280.0" styleClass="menuBtn">
+                                       <font>
+                                          <Font name="Arial Bold" size="18.0" />
+                                       </font>
+                                       <graphic>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                             <children>
+                                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../icons/multiple-users.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label text="GESTIONE DIPENDENTI" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="btnManagmentBooking" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="264.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="45.0" prefWidth="280.0" styleClass="menuBtn">
+                                       <font>
+                                          <Font name="Arial Bold" size="18.0" />
+                                       </font>
+                                       <graphic>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                             <children>
+                                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../icons/calendario-white.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label text="PRENOTAZIONI" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="btnLogout" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="288.0" mnemonicParsing="false" onAction="#onLogoutClicked" prefHeight="45.0" prefWidth="280.0" styleClass="menuBtn">
+                                       <font>
+                                          <Font name="Arial Bold" size="18.0" />
+                                       </font>
+                                       <graphic>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                             <children>
+                                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../icons/logout.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label text="LOGOUT" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane fx:id="contentArea" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

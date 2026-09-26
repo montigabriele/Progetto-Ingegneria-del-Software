@@ -1,0 +1,179 @@
+.background-right {
+    -fx-background-color:  #264653;
+}
+
+.btn-remove-all-tables {
+    -fx-background-color: linear-gradient(to bottom right, #e76f51, #d95d3a);
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(231, 111, 81, 0.35), 10, 0.3, 0, 3);
+}
+
+.btn-remove-all-tables:hover {
+    -fx-background-color: linear-gradient(to bottom right, #f1916d, #e76f51);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-effect: dropshadow(gaussian, rgba(231, 111, 81, 0.45), 14, 0.5, 0, 4);
+}
+
+.btn-remove-all-tables:pressed {
+    -fx-background-color: #c74a2e;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.22), 8, 0.3, 0, 2);
+}
+
+.background-room {
+    -fx-background-image: url("../images/floor1.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.background-room-waiter {
+    -fx-background-image: url("../images/floor.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.back {
+    -fx-background-image: url("../images/back_blue.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.btn-remove-table {
+    -fx-background-color: linear-gradient(to bottom right, #f4a261, #e76f51);
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(231, 111, 81, 0.35), 10, 0.3, 0, 3);
+}
+
+.btn-remove-table:hover {
+    -fx-background-color: linear-gradient(to bottom right, #f4a261, #e76f51);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-effect: dropshadow(gaussian, rgba(231, 111, 81, 0.45), 14, 0.5, 0, 4);
+}
+
+.btn-remove-table:pressed {
+    -fx-background-color: #c74a2e;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.22), 8, 0.3, 0, 2);
+}
+
+.btn-require-bill {
+    -fx-background-color: linear-gradient(to bottom right, #739eb9, #50647d);
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(231, 111, 81, 0.35), 10, 0.3, 0, 3);
+}
+
+.btn-require-bill:hover {
+    -fx-background-color: linear-gradient(to bottom right, #6a7e96, #3d4e62);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-effect: dropshadow(gaussian, rgba(231, 111, 81, 0.45), 14, 0.5, 0, 4);
+}
+
+.btn-require-bill:pressed {
+    -fx-background-color: #334150;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.22), 8, 0.3, 0, 2);
+}
+
+.btn-move {
+    -fx-background-color: linear-gradient(to bottom right, #7fb0cc, #74a7c5);
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(42, 157, 143, 0.35), 10, 0.3, 0, 3);
+}
+
+.btn-move:hover {
+    -fx-background-color: linear-gradient(to bottom right, #2fb3a3, #2a9d8f);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-effect: dropshadow(gaussian, rgba(42, 157, 143, 0.45), 14, 0.5, 0, 4);
+}
+
+.btn-move:pressed {
+    -fx-background-color: #287271;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.22), 8, 0.3, 0, 2);
+}
+
+.btn-add-table-2,
+.btn-add-table-4,
+.btn-add-table-6,
+.btn-add-table-8 {
+    -fx-background-color: linear-gradient(to bottom right, #e9c46a, #f4a261);
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(233, 196, 106, 0.35), 10, 0.3, 0, 3);
+}
+
+.btn-add-table-2:hover,
+.btn-add-table-4:hover,
+.btn-add-table-6:hover,
+.btn-add-table-8:hover {
+    -fx-background-color: linear-gradient(to bottom right, #f4a261, #e9c46a);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-effect: dropshadow(gaussian, rgba(233, 196, 106, 0.45), 14, 0.5, 0, 4);
+}
+
+.btn-add-table-2:pressed,
+.btn-add-table-4:pressed,
+.btn-add-table-6:pressed,
+.btn-add-table-8:pressed {
+    -fx-background-color: #d4a24a;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.22), 8, 0.3, 0, 2);
+}
+
+.btn-save-room {
+    -fx-background-color: linear-gradient(to bottom right, #77916f, #77916f);
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(138, 177, 125, 0.35), 10, 0.3, 0, 3);
+}
+
+.btn-save-room:hover {
+    -fx-background-color: linear-gradient(to bottom right, #9bc88d, #8ab17d);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-effect: dropshadow(gaussian, rgba(138, 177, 125, 0.45), 14, 0.5, 0, 4);
+}
+
+.btn-save-room:pressed {
+    -fx-background-color: #5b8a52;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.22), 8, 0.3, 0, 2);
+}
+
+.top-bar{
+    -fx-background-color: #292f34;
+}
+
+.right-back{
+    -fx-background-color: #292f34;
+}
+
+.spinner {
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}

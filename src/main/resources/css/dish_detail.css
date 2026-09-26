@@ -1,0 +1,88 @@
+.detail-container {
+    -fx-background-color: #f5f5f5;
+}
+
+.product-title {
+    -fx-text-fill: #2c3e50;
+}
+
+.product-subtitle {
+    -fx-text-fill: #7f8c8d;
+}
+
+.product-price {
+    -fx-text-fill: #27ae60;
+}
+
+.product-status {
+    -fx-padding: 5 10 5 10;
+    -fx-background-radius: 5;
+}
+
+.product-image {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 2);
+    -fx-background-radius: 10;
+}
+
+.section-title {
+    -fx-text-fill: #34495e;
+    -fx-padding: 5 0 5 0;
+}
+
+.description-text {
+    -fx-text-fill: #555;
+    -fx-font-size: 13px;
+}
+
+.nutrient-box {
+    -fx-background-color: white;
+    -fx-padding: 15;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 2);
+    -fx-min-width: 100;
+}
+
+.nutrient-label {
+    -fx-text-fill: #95a5a6;
+}
+
+.nutrient-value {
+    -fx-text-fill: #2c3e50;
+}
+
+.allergen-text {
+    -fx-background-color: #ffebee;
+    -fx-padding: 10;
+    -fx-background-radius: 5;
+}
+
+.table-view {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-border-color: #2a9d8f;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1.5px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom right, #2a9d8f, #287271);
+    -fx-background-radius: 5px 5px 0 0;
+    -fx-background-insets: 0 0 0 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-size: 40px;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #ffffff;
+}
+
+.border-line {
+    -fx-background-color: #ffffff;
+    -fx-border-color:  #287271;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}

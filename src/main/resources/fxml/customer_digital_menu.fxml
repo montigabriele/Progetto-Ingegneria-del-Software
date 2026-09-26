@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="810.0" maxWidth="1440.0" minHeight="810.0" minWidth="1440.0" prefHeight="810.0" prefWidth="1440.0" styleClass="background-menu" stylesheets="@../css/customer.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.foodmood.view.ui.gui.customer.GuiCustomerDigitalMenu">
+   <columnConstraints>
+      <ColumnConstraints hgrow="ALWAYS" minWidth="1440.0" percentWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="150.0" vgrow="NEVER" />
+      <RowConstraints minHeight="350.0" vgrow="ALWAYS" />
+      <RowConstraints minHeight="40.0" vgrow="NEVER" />
+   </rowConstraints>
+   <children>
+      <HBox alignment="CENTER_LEFT" minWidth="130.0" stylesheets="@../css/customer.css" GridPane.hgrow="ALWAYS">
+         <children>
+            <HBox alignment="CENTER_LEFT" minWidth="400.0" HBox.hgrow="SOMETIMES">
+               <children>
+                  <ImageView fitHeight="120.0" fitWidth="250.0" onMouseClicked="#onBackToHomePage" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logo_restaurant.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" spacing="40.0" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="1254.0" layoutY="10.0" minWidth="400.0" spacing="15.0">
+               <children>
+                  <Button fx:id="btnCart" alignment="CENTER" contentDisplay="CENTER" minHeight="45.0" minWidth="100.0" mnemonicParsing="false" onAction="#onCartClicked" styleClass="btnCart" textAlignment="CENTER">
+                     <font>
+                        <Font name="Arial Bold" size="24.0" />
+                     </font>
+                     <graphic>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/receipt.png" />
+                                 </image>
+                              </ImageView>
+                              <Label contentDisplay="CENTER" text="ORDINE" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnAccount" alignment="CENTER" contentDisplay="CENTER" layoutX="261.0" layoutY="63.0" minHeight="45.0" minWidth="100.0" mnemonicParsing="false" onAction="#onAccountClicked" styleClass="btnAccount" stylesheets="@../css/customer.css" textAlignment="CENTER">
+                     <font>
+                        <Font name="Arial Bold" size="24.0" />
+                     </font>
+                     <graphic>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label contentDisplay="CENTER">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </Label>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/account.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="lblUserInitials" contentDisplay="CENTER">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </HBox>
+         </children>
+      </HBox>
+      <AnchorPane GridPane.rowIndex="1">
+         <children>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" styleClass="menu-container" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="85.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <VBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label text="Menù">
+                           <font>
+                              <Font name="Arial Bold" size="30.0" />
+                           </font>
+                        </Label>
+                        <ToggleButton fx:id="btnAppetizer" mnemonicParsing="false" onAction="#onAppetizerClicked" prefHeight="45.0" prefWidth="200.0" styleClass="menuBtn">
+                           <graphic>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icons/olives.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label text="Antipasti" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                        </ToggleButton>
+                        <ToggleButton fx:id="btnFirstCourse" layoutX="30.0" layoutY="120.0" mnemonicParsing="false" onAction="#onFirstCourseClicked" prefHeight="45.0" prefWidth="200.0" styleClass="menuBtn">
+                           <graphic>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icons/dish.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label text="Primi" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                        </ToggleButton>
+                        <ToggleButton fx:id="btnMainCourse" layoutX="30.0" layoutY="542.0" mnemonicParsing="false" onAction="#onMainCourseClicked" prefHeight="45.0" prefWidth="200.0" styleClass="menuBtn">
+                           <graphic>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icons/beef.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label text="Secondi" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                        </ToggleButton>
+                        <ToggleButton fx:id="btnPizza" mnemonicParsing="false" onAction="#onPizzaClicked" prefHeight="45.0" prefWidth="200.0" styleClass="menuBtn">
+                           <graphic>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icons/beef.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label text="Pizze" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                        </ToggleButton>
+                        <ToggleButton fx:id="btnSideDish" layoutX="30.0" layoutY="566.0" mnemonicParsing="false" onAction="#onSideDishClicked" prefHeight="45.0" prefWidth="200.0" styleClass="menuBtn">
+                           <graphic>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icons/fries.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label text="Contorni" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                        </ToggleButton>
+                        <ToggleButton fx:id="btnFruit" layoutX="30.0" layoutY="615.0" mnemonicParsing="false" onAction="#onFruitClicked" prefHeight="45.0" prefWidth="200.0" styleClass="menuBtn">
+                           <graphic>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icons/apple.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label text="Frutta" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                        </ToggleButton>
+                        <ToggleButton fx:id="btnDessert" layoutX="30.0" layoutY="674.0" mnemonicParsing="false" onAction="#onDessertClicked" prefHeight="45.0" prefWidth="200.0" styleClass="menuBtn">
+                           <graphic>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icons/cake.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label text="Dolci" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                        </ToggleButton>
+                        <ToggleButton fx:id="btnBeverage" layoutX="30.0" layoutY="733.0" mnemonicParsing="false" onAction="#onBeverageClicked" prefHeight="45.0" prefWidth="200.0" styleClass="menuBtn">
+                           <graphic>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icons/soft-drink.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label text="Bevande" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                        </ToggleButton>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </VBox>
+               </left>
+               <center>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxWidth="1000.0" styleClass="menu" BorderPane.alignment="CENTER">
+                     <content>
+                        <GridPane fx:id="menuGridPane" styleClass="menu-grid" />
+                     </content>
+                     <BorderPane.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </BorderPane.margin>
+                  </ScrollPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>

@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1140.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.foodmood.view.ui.gui.manager.GuiManagmentDish">
+   <children>
+      <AnchorPane fx:id="paneList" prefHeight="810.0" prefWidth="1140.0" stylesheets="@../css/manager.css">
+         <children>
+            <AnchorPane stylesheets="@../css/manager.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+               <styleClass>
+                  <String fx:value="white-bg" />
+                  <String fx:value="radius" />
+                  <String fx:value="shadow" />
+               </styleClass>
+            </AnchorPane>
+            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" stylesheets="@../css/manager.css" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <content>
+                  <VBox alignment="TOP_CENTER" fillWidth="true" spacing="15.0">
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                     <children>
+                        <VBox spacing="5.0">
+                           <children>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <Label text="GESTIONE " textFill="#264653" wrapText="true">
+                                             <font>
+                                                <Font name="Arial Black" size="36.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="PIATTI" textFill="#264653" wrapText="true">
+                                             <font>
+                                                <Font name="Arial Black" size="36.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" fillHeight="true" spacing="10.0">
+                                       <children>
+                                          <VBox alignment="CENTER_LEFT" spacing="10.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="Ricerca:" wrapText="true">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="tfResarchDish" maxWidth="1.7976931348623157E308" minHeight="40.0" promptText="Cerca piatto" styleClass="form">
+                                                   <font>
+                                                      <Font name="Arial" size="14.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </VBox>
+                                          <HBox alignment="BOTTOM_LEFT" spacing="10.0" HBox.hgrow="NEVER">
+                                             <children>
+                                                <Button fx:id="btnNewDish" minWidth="150.0" onAction="#onAddNewDish" prefHeight="40.0" prefWidth="200.0" styleClass="btn-add" text="AGGIUNGI PIATTO">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="12.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button fx:id="btnDeleteDish" minWidth="150.0" onAction="#onDeleteDish" prefHeight="40.0" prefWidth="200.0" styleClass="btn-remove" text="RIMUOVI PIATTO" textAlignment="CENTER">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="12.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                    <TableView fx:id="tableDishes" prefHeight="450.0">
+                                       <columns>
+                                          <TableColumn fx:id="colName" prefWidth="200.0" text="Nome" />
+                                          <TableColumn fx:id="colPrice" prefWidth="200.0" text="Prezzo" />
+                                          <TableColumn fx:id="colState" prefWidth="200.0" text="Stato" />
+                                          <TableColumn fx:id="colType" prefWidth="200.0" text="Tipologia" />
+                                       </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </TableView>
+                                    <VBox alignment="CENTER" prefHeight="130.0" spacing="10.0" styleClass="border-line" VBox.vgrow="NEVER">
+                                       <children>
+                                          <HBox alignment="CENTER" fillHeight="true" prefHeight="100.0" spacing="20.0">
+                                             <children>
+                                                <VBox alignment="CENTER_LEFT">
+                                                   <children>
+                                                      <VBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-1" spacing="10.0">
+                                                         <children>
+                                                            <Label text="Nome piatto" wrapText="true">
+                                                               <font>
+                                                                  <Font name="Arial Bold" size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <TextField fx:id="tfDishName" maxWidth="-Infinity" minHeight="40.0" prefWidth="200.0" promptText="Inserisci il nome del piatto" styleClass="form">
+                                                               <font>
+                                                                  <Font name="Arial" size="15.0" />
+                                                               </font>
+                                                            </TextField>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-1" spacing="10.0" HBox.hgrow="ALWAYS">
+                                                   <children>
+                                                      <Label text="Prezzo (€)" wrapText="true">
+                                                         <font>
+                                                            <Font name="Arial Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="tfPrice" maxWidth="-Infinity" minHeight="40.0" prefWidth="200.0" promptText="0.00" styleClass="form">
+                                                         <font>
+                                                            <Font name="Arial" size="15.0" />
+                                                         </font>
+                                                      </TextField>
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-1" spacing="10.0">
+                                                   <children>
+                                                      <Label text="Disponibilità" wrapText="true">
+                                                         <font>
+                                                            <Font name="Arial Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ComboBox fx:id="cbState" maxWidth="-Infinity" minHeight="40.0" prefWidth="200.0" promptText="Seleziona stato" styleClass="section-container" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-1" spacing="10.0">
+                                                   <children>
+                                                      <Label text="Tipologia" wrapText="true">
+                                                         <font>
+                                                            <Font name="Arial Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ComboBox fx:id="cbType" maxWidth="-Infinity" minHeight="40.0" prefWidth="200.0" promptText="Seleziona tipologia" styleClass="section-container" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-1" spacing="10.0">
+                                                   <children>
+                                                      <Label wrapText="true">
+                                                         <font>
+                                                            <Font name="Arial Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Button fx:id="btnUpdateDish" minHeight="40.0" minWidth="150.0" onAction="#onUpdateDish" prefHeight="40.0" prefWidth="200.0" styleClass="btn-modify" text="MODIFICA PIATTO" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font name="Arial Bold" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="paneForm" managed="false" prefHeight="810.0" prefWidth="1140.0" stylesheets="@../css/manager.css" visible="false">
+         <children>
+            <AnchorPane stylesheets="@../css/manager.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+               <styleClass>
+                  <String fx:value="white-bg" />
+                  <String fx:value="radius" />
+                  <String fx:value="shadow" />
+               </styleClass>
+            </AnchorPane>
+            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" stylesheets="@../css/manager.css" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <content>
+                  <VBox alignment="TOP_CENTER" fillWidth="true" spacing="15.0">
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                     <children>
+                        <VBox spacing="5.0">
+                           <children>
+                              <Label text="AGGIUNGI NUOVO PIATTO" textFill="#264653" wrapText="true">
+                                 <font>
+                                    <Font name="Arial Black" size="36.0" />
+                                 </font>
+                              </Label>
+                              <VBox spacing="10.0" VBox.vgrow="NEVER">
+                                 <children>
+                                    <HBox fillHeight="true" spacing="20.0">
+                                       <children>
+                                          <VBox maxWidth="1.7976931348623157E308" minWidth="-1" spacing="10.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="Nome piatto *" wrapText="true">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="tfDishNameForm" maxWidth="-Infinity" minHeight="40.0" prefWidth="220.0" promptText="Inserisci il nome del piatto" styleClass="form">
+                                                   <font>
+                                                      <Font name="Arial" size="15.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </VBox>
+                                          <VBox maxWidth="1.7976931348623157E308" minWidth="-1" spacing="10.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="Prezzo (€) *" wrapText="true">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="tfPriceForm" maxWidth="-Infinity" minHeight="40.0" prefWidth="200.0" promptText="0.00" styleClass="form">
+                                                   <font>
+                                                      <Font name="Arial" size="15.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </VBox>
+                                          <VBox maxWidth="1.7976931348623157E308" minWidth="-1" spacing="10.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="Tipo prodotto *" wrapText="true">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <ComboBox fx:id="cbProductType" maxWidth="-Infinity" minHeight="40.0" prefWidth="220.0" promptText="Seleziona tipo" styleClass="section-container" />
+                                             </children>
+                                          </VBox>
+                                          <VBox maxWidth="1.7976931348623157E308" minWidth="-1" spacing="10.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="Categoria *" wrapText="true">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <MenuButton fx:id="mbDietCategories" maxWidth="-Infinity" minHeight="40.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" styleClass="section-container" text="Seleziona categorie *">
+                                                   <items>
+                                                      <CheckMenuItem fx:id="miTraditional" mnemonicParsing="false" text="Tradizionale" />
+                                                      <CheckMenuItem fx:id="miVegetarian" mnemonicParsing="false" text="Vegetariana" />
+                                                      <CheckMenuItem fx:id="miVegan" mnemonicParsing="false" text="Vegana" />
+                                                      <CheckMenuItem fx:id="miGlutenFree" mnemonicParsing="false" text="Senza glutine" />
+                                                      <CheckMenuItem fx:id="miLactoseFree" mnemonicParsing="false" text="Senza lattosio" />
+                                                   </items>
+                                                </MenuButton>
+                                             </children>
+                                          </VBox>
+                                          <VBox maxWidth="1.7976931348623157E308" minWidth="-1" spacing="10.0">
+                                             <children>
+                                                <Label text="Stato *" wrapText="true">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <ComboBox fx:id="cbStateForm" maxWidth="-Infinity" minHeight="40.0" prefWidth="220.0" promptText="Seleziona stato" styleClass="section-container" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox fillWidth="true" spacing="10.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <SplitPane dividerPositions="0.65" VBox.vgrow="ALWAYS">
+                                       <items>
+                                          <VBox spacing="10.0" SplitPane.resizableWithParent="true" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" fillHeight="true" spacing="10.0">
+                                                   <children>
+                                                      <VBox alignment="CENTER_LEFT" spacing="10.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <Label text="Ricerca:" wrapText="true">
+                                                               <font>
+                                                                  <Font name="Arial Bold" size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <TextField fx:id="tfAdvancedResarch" maxWidth="1.7976931348623157E308" minHeight="40.0" promptText="Cerca nome ingrediente" styleClass="form">
+                                                               <font>
+                                                                  <Font name="Arial" size="14.0" />
+                                                               </font>
+                                                            </TextField>
+                                                         </children>
+                                                      </VBox>
+                                                      <HBox alignment="BOTTOM_LEFT" spacing="10.0" HBox.hgrow="NEVER">
+                                                         <children>
+                                                            <Button fx:id="btnAddToTheDish" minWidth="150.0" onAction="#onAddIngredient" prefHeight="40.0" prefWidth="170.0" styleClass="btn-add" text="AGGIUNGI AL PIATTO">
+                                                               <font>
+                                                                  <Font name="Arial Bold" size="12.0" />
+                                                               </font>
+                                                            </Button>
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </HBox>
+                                                <TableView fx:id="tableIngredientsForm" VBox.vgrow="ALWAYS">
+                                                   <columns>
+                                                      <TableColumn fx:id="colNameForm" prefWidth="150.0" text="Nome" />
+                                                      <TableColumn fx:id="colUnitForm" prefWidth="70.0" text="Unità" />
+                                                      <TableColumn fx:id="colKcalForm" prefWidth="80.0" text="kcal/100" />
+                                                      <TableColumn fx:id="colMacrosForm" prefWidth="140.0" text="Carb/Prot/Grassi" />
+                                                      <TableColumn fx:id="colAllergensForm" prefWidth="120.0" text="Allergeni" />
+                                                   </columns>
+                                                   <columnResizePolicy>
+                                                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                   </columnResizePolicy>
+                                                </TableView>
+                                             </children>
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                          </VBox>
+                                          <VBox minWidth="300.0" spacing="10.0" SplitPane.resizableWithParent="true" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <Label text="Ingredienti del piatto" wrapText="true">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <ListView fx:id="listDishIngredients" prefHeight="110.0" prefWidth="350.0" styleClass="border-line" VBox.vgrow="ALWAYS" />
+                                                <HBox alignment="CENTER" spacing="10.0">
+                                                   <children>
+                                                      <Button fx:id="btnChangeQuantity" minWidth="150.0" onAction="#btnChangeQuantity" prefHeight="40.0" prefWidth="170.0" styleClass="btn-modify" text="MODIFICA QUANTITA'">
+                                                         <font>
+                                                            <Font name="Arial Bold" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button fx:id="btnRemoveIngredient" minWidth="150.0" onAction="#onRemoveIngredient" prefHeight="40.0" prefWidth="170.0" styleClass="btn-remove" text="RIMUOVI">
+                                                         <font>
+                                                            <Font name="Arial Bold" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                                <VBox maxWidth="1.7976931348623157E308" spacing="15.0">
+                                                   <children>
+                                                      <VBox spacing="0.0" style="-fx-background-color: linear-gradient(to bottom, #e8f4f8 0%, #ffffff 100%); -fx-border-color: #287271; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
+                                                         <children>
+                                                            <VBox alignment="CENTER" style="-fx-background-color: #287271; -fx-background-radius: 8 8 0 0;">
+                                                               <children>
+                                                                  <Label text="Calorie totali" textFill="WHITE" wrapText="true">
+                                                                     <font>
+                                                                        <Font name="Arial" size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <HBox alignment="CENTER" spacing="5.0">
+                                                                     <children>
+                                                                        <Label fx:id="lblTotalKcal" text="0" textFill="WHITE" wrapText="true">
+                                                                           <font>
+                                                                              <Font name="Arial Black" size="24.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Label text="kcal" textFill="WHITE" wrapText="true">
+                                                                           <font>
+                                                                              <Font name="Arial Bold" size="14.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                            </VBox>
+                                                            <VBox spacing="1.0">
+                                                               <padding>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </padding>
+                                                               <children>
+                                                                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                                                     <children>
+                                                                        <Region prefWidth="4.0" styleClass="carbohydrates" HBox.hgrow="NEVER" />
+                                                                        <VBox spacing="2.0" HBox.hgrow="ALWAYS">
+                                                                           <children>
+                                                                              <Label text="Carboidrati" wrapText="true">
+                                                                                 <font>
+                                                                                    <Font name="Arial" size="13.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                              <HBox alignment="BASELINE_LEFT" spacing="5.0">
+                                                                                 <children>
+                                                                                    <Label fx:id="lblTotalCarbs" text="0" textFill="#2a9d8f" wrapText="true">
+                                                                                       <font>
+                                                                                          <Font name="Arial Black" size="18.0" />
+                                                                                       </font>
+                                                                                    </Label>
+                                                                                    <Label text="g" textFill="#6c757d" wrapText="true">
+                                                                                       <font>
+                                                                                          <Font name="Arial" size="14.0" />
+                                                                                       </font>
+                                                                                    </Label>
+                                                                                 </children>
+                                                                              </HBox>
+                                                                           </children>
+                                                                        </VBox>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                                                     <children>
+                                                                        <Region prefWidth="4.0" styleClass="proteins" HBox.hgrow="NEVER" />
+                                                                        <VBox spacing="2.0" HBox.hgrow="ALWAYS">
+                                                                           <children>
+                                                                              <Label text="Proteine" wrapText="true">
+                                                                                 <font>
+                                                                                    <Font name="Arial" size="13.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                              <HBox alignment="BASELINE_LEFT" spacing="5.0">
+                                                                                 <children>
+                                                                                    <Label fx:id="lblTotalProtein" text="0" textFill="#e9c46a" wrapText="true">
+                                                                                       <font>
+                                                                                          <Font name="Arial Black" size="18.0" />
+                                                                                       </font>
+                                                                                    </Label>
+                                                                                    <Label text="g" textFill="#6c757d" wrapText="true">
+                                                                                       <font>
+                                                                                          <Font name="Arial" size="14.0" />
+                                                                                       </font>
+                                                                                    </Label>
+                                                                                 </children>
+                                                                              </HBox>
+                                                                           </children>
+                                                                        </VBox>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                                                     <children>
+                                                                        <Region prefWidth="4.0" styleClass="fats" HBox.hgrow="NEVER" />
+                                                                        <VBox spacing="2.0" HBox.hgrow="ALWAYS">
+                                                                           <children>
+                                                                              <Label text="Grassi" wrapText="true">
+                                                                                 <font>
+                                                                                    <Font name="Arial" size="13.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                              <HBox alignment="BASELINE_LEFT" spacing="5.0">
+                                                                                 <children>
+                                                                                    <Label fx:id="lblTotalFats" text="0" textFill="#f4a261" wrapText="true">
+                                                                                       <font>
+                                                                                          <Font name="Arial Black" size="18.0" />
+                                                                                       </font>
+                                                                                    </Label>
+                                                                                    <Label text="g" textFill="#6c757d" wrapText="true">
+                                                                                       <font>
+                                                                                          <Font name="Arial" size="14.0" />
+                                                                                       </font>
+                                                                                    </Label>
+                                                                                 </children>
+                                                                              </HBox>
+                                                                           </children>
+                                                                        </VBox>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Separator>
+                                                                     <VBox.margin>
+                                                                        <Insets bottom="5.0" top="5.0" />
+                                                                     </VBox.margin>
+                                                                  </Separator>
+                                                                  <VBox spacing="5.0">
+                                                                     <children>
+                                                                        <Label text="Allergeni presenti" wrapText="true">
+                                                                           <font>
+                                                                              <Font name="Arial Bold" size="13.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Label fx:id="lblAllergens" text="-" textFill="#495057" wrapText="true">
+                                                                           <font>
+                                                                              <Font name="Arial" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                             <padding>
+                                                <Insets left="10.0" right="10.0" />
+                                             </padding>
+                                          </VBox>
+                                       </items>
+                                    </SplitPane>
+                                 </children>
+                              </VBox>
+                              <HBox fillHeight="true" maxWidth="1.7976931348623157E308" spacing="20.0">
+                                 <children>
+                                    <VBox maxWidth="320.0" minWidth="280.0" spacing="10.0" HBox.hgrow="NEVER">
+                                       <children>
+                                          <Label text="Immagine" wrapText="true">
+                                             <font>
+                                                <Font name="Arial Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <HBox alignment="CENTER_LEFT" spacing="20.0">
+                                             <children>
+                                                <AnchorPane maxHeight="100.0" maxWidth="100.0" minHeight="100.0" minWidth="100.0" styleClass="border-line">
+                                                   <children>
+                                                      <ImageView fx:id="ivImage" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <VBox alignment="CENTER" spacing="10.0">
+                                                   <children>
+                                                      <Button fx:id="btnImport" onAction="#onImportImage" prefHeight="40.0" prefWidth="150.0" styleClass="btn-new-ingredient">
+                                                         <graphic>
+                                                            <HBox alignment="CENTER" spacing="5.0">
+                                                               <children>
+                                                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../icons/add-image.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <Label text="IMPORTA" textFill="WHITE" wrapText="true">
+                                                                     <font>
+                                                                        <Font name="Arial Bold" size="12.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                            </HBox>
+                                                         </graphic>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </Button>
+                                                      <Button fx:id="btnRemoveImg" onAction="#onRemoveImage" prefHeight="40.0" prefWidth="150.0" styleClass="btn-remove">
+                                                         <graphic>
+                                                            <HBox alignment="CENTER" spacing="5.0">
+                                                               <children>
+                                                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../icons/remove-image.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <Label text="RIMUOVI" textFill="WHITE" wrapText="true">
+                                                                     <font>
+                                                                        <Font name="Arial Bold" size="12.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                            </HBox>
+                                                         </graphic>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </Button>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox spacing="10.0" HBox.hgrow="SOMETIMES">
+                                       <children>
+                                          <Label text="Descrizione del prodotto" wrapText="true">
+                                             <font>
+                                                <Font name="Arial Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea fx:id="taDishDescriptionForm" maxWidth="550.0" prefColumnCount="4" prefHeight="100.0" prefRowCount="4" prefWidth="400.0" styleClass="border-line" wrapText="true">
+                                             <font>
+                                                <Font name="Arial" size="15.0" />
+                                             </font>
+                                          </TextArea>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="BOTTOM_CENTER" maxWidth="1.7976931348623157E308" prefHeight="130.0" prefWidth="380.0" spacing="10.0" HBox.hgrow="SOMETIMES">
+                                       <children>
+                                          <Button fx:id="btnSave" onAction="#onSaveDish" prefHeight="40.0" prefWidth="280.0" styleClass="btn-save-main">
+                                             <graphic>
+                                                <HBox alignment="CENTER" spacing="10.0">
+                                                   <children>
+                                                      <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../icons/diskette.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label text="SALVA" textFill="WHITE" wrapText="true">
+                                                         <font>
+                                                            <Font name="Arial Black" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <Button fx:id="btnCancel" onAction="#onCancel" prefHeight="40.0" prefWidth="280.0" styleClass="btn-cancel-main">
+                                             <graphic>
+                                                <HBox alignment="CENTER" spacing="10.0">
+                                                   <children>
+                                                      <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../icons/x-mark.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label text="ANNULLA" textFill="WHITE" wrapText="true">
+                                                         <font>
+                                                            <Font name="Arial Black" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

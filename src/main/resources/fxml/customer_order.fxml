@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="810.0" maxWidth="1440.0" minHeight="810.0" minWidth="1440.0" prefHeight="810.0" prefWidth="1440.0" styleClass="background-menu" stylesheets="@../css/customer.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.foodmood.view.ui.gui.customer.GuiCustomerOrder">
+   <columnConstraints>
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="288.0" minWidth="288.0" percentWidth="20.0" prefWidth="288.0" />
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="864.0" minWidth="864.0" percentWidth="60.0" prefWidth="864.0" />
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="288.0" minWidth="288.0" percentWidth="20.0" prefWidth="288.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="810.0" minHeight="810.0" prefHeight="810.0" vgrow="ALWAYS" />
+   </rowConstraints>
+   <children>
+      <VBox>
+         <children>
+            <HBox alignment="CENTER_LEFT" minHeight="150.0" prefHeight="150.0">
+               <children>
+                  <ImageView fitHeight="120.0" fitWidth="250.0" onMouseClicked="#onBackToHomePage" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logo_restaurant.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </HBox>
+            <Region prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </VBox>
+      <AnchorPane prefHeight="450.0" prefWidth="200.0" stylesheets="@../css/login.css" GridPane.columnIndex="1">
+         <children>
+            <BorderPane fx:id="firstQuestionPane" maxHeight="740.0" minHeight="740.0" prefHeight="740.0" prefWidth="450.0" styleClass="vbox-login" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="130.0" AnchorPane.topAnchor="35.0">
+               <top>
+                  <HBox prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button fx:id="btnBackFirst" minHeight="40.0" minWidth="40.0" onAction="#onBackToHome" style="-fx-background-color: transparent;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/back.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                     <padding>
+                        <Insets left="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </top>
+               <center>
+                  <VBox alignment="CENTER" minWidth="450.0" prefHeight="450.0" spacing="10.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox alignment="CENTER" spacing="10.0" VBox.vgrow="NEVER">
+                           <children>
+                              <Label alignment="CENTER" text="Ordina su misura per te" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Arial Black" size="42.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="20.0" stylesheets="@../css/manager.css" VBox.vgrow="NEVER">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-1" spacing="10.0" />
+                              <VBox minWidth="300.0" spacing="15.0">
+                                 <children>
+                                    <Label text="Cosa vorresti ordinare?" textFill="#287271" wrapText="true">
+                                       <font>
+                                          <Font name="Arial Black" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <ToggleButton fx:id="tbAppetizer" maxWidth="1.7976931348623157E308" minHeight="43.0" mnemonicParsing="false" prefHeight="43.0" styleClass="section-container" text="Antipasto">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="tbFirstCourse" maxWidth="1.7976931348623157E308" minHeight="43.0" mnemonicParsing="false" prefHeight="43.0" styleClass="section-container" text="Primo">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="tbMainCourse" maxWidth="1.7976931348623157E308" minHeight="43.0" mnemonicParsing="false" prefHeight="43.0" styleClass="section-container" text="Secondo">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="tbPizza" maxWidth="1.7976931348623157E308" minHeight="43.0" mnemonicParsing="false" prefHeight="43.0" styleClass="section-container" text="Pizza">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="tbSideDish" maxWidth="1.7976931348623157E308" minHeight="43.0" mnemonicParsing="false" prefHeight="43.0" styleClass="section-container" text="Contorno">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="tbFruit" maxWidth="1.7976931348623157E308" minHeight="43.0" mnemonicParsing="false" prefHeight="43.0" styleClass="section-container" text="Frutta">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="tbBeverage" maxWidth="1.7976931348623157E308" minHeight="43.0" mnemonicParsing="false" prefHeight="43.0" styleClass="section-container" text="Bevanda">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="tbDessert" maxWidth="1.7976931348623157E308" minHeight="43.0" mnemonicParsing="false" prefHeight="43.0" styleClass="section-container" text="Dolce">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ToggleButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <Region minHeight="0.0" VBox.vgrow="SOMETIMES" />
+                        <VBox alignment="CENTER" spacing="20.0" VBox.vgrow="NEVER">
+                           <children>
+                              <Button fx:id="btnNextFirst" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minHeight="50.0" mnemonicParsing="false" onAction="#onNextFirst" prefHeight="50.0" styleClass="normalBtn">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label text="Avanti" textAlignment="CENTER" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </VBox>
+                        <Region minHeight="10.0" />
+                     </children>
+                     <BorderPane.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </BorderPane.margin>
+                  </VBox>
+               </center>
+            </BorderPane>
+            <BorderPane fx:id="secondQuestionPane" prefWidth="450.0" styleClass="vbox-login" visible="false" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="130.0" AnchorPane.topAnchor="35.0">
+               <top>
+                  <HBox prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button fx:id="btnBackSecond" minHeight="40.0" minWidth="40.0" onAction="#onBackToFirstQuestion" style="-fx-background-color: transparent;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/back.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                     <padding>
+                        <Insets left="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </top>
+               <center>
+                  <VBox alignment="CENTER" minWidth="450.0" prefHeight="450.0" spacing="10.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox alignment="CENTER" spacing="10.0" VBox.vgrow="NEVER">
+                           <children>
+                              <Label alignment="CENTER" text="Ordina su misura per te" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Arial Black" size="42.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="20.0" stylesheets="@../css/manager.css" VBox.vgrow="NEVER">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-1" spacing="10.0" />
+                              <VBox minWidth="300.0" spacing="15.0">
+                                 <children>
+                                    <Label text="Segui un particolare stile alimentare?" textFill="#287271" wrapText="true">
+                                       <font>
+                                          <Font name="Arial Black" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <ToggleButton fx:id="tbTraditional" layoutX="10.0" layoutY="62.0" maxWidth="1.7976931348623157E308" minHeight="50.0" mnemonicParsing="false" prefHeight="50.0" styleClass="section-container" text="Tradizionale (carne, pesce, latticini)">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="tbVegan" layoutX="10.0" layoutY="99.0" maxWidth="1.7976931348623157E308" minHeight="50.0" mnemonicParsing="false" prefHeight="50.0" styleClass="section-container" text="Vegano (solo vegetali)">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="tbVegetarian" layoutX="10.0" layoutY="164.0" maxWidth="1.7976931348623157E308" minHeight="50.0" mnemonicParsing="false" prefHeight="50.0" styleClass="section-container" text="Vegetariano (senza carne e pesce)">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="tbGlutenFree" layoutX="10.0" layoutY="229.0" maxWidth="1.7976931348623157E308" minHeight="50.0" mnemonicParsing="false" prefHeight="50.0" styleClass="section-container" text="Senza Glutine">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="tbLactoseFree" layoutX="10.0" layoutY="294.0" maxWidth="1.7976931348623157E308" minHeight="50.0" mnemonicParsing="false" prefHeight="50.0" styleClass="section-container" text="Senza Lattosio">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ToggleButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <Region minHeight="15.0" VBox.vgrow="SOMETIMES" />
+                        <VBox alignment="CENTER" spacing="20.0" VBox.vgrow="NEVER">
+                           <children>
+                              <Button fx:id="btnNextSecond" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minHeight="50.0" mnemonicParsing="false" onAction="#onNextSecond" prefHeight="50.0" styleClass="normalBtn">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label text="Avanti" textAlignment="CENTER" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </VBox>
+                        <Region minHeight="10.0" />
+                     </children>
+                     <BorderPane.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </BorderPane.margin>
+                  </VBox>
+               </center>
+            </BorderPane>
+            <BorderPane fx:id="thirdQuestionPane" prefWidth="450.0" styleClass="vbox-login" visible="false" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="130.0" AnchorPane.topAnchor="35.0">
+               <top>
+                  <HBox prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button fx:id="btnBackThird" minHeight="40.0" minWidth="40.0" onAction="#onBackToSecondQuestion" style="-fx-background-color: transparent;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/back.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                     <padding>
+                        <Insets left="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </top>
+               <center>
+                  <VBox alignment="CENTER" minWidth="450.0" prefHeight="450.0" spacing="10.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox alignment="CENTER" spacing="10.0" VBox.vgrow="NEVER">
+                           <children>
+                              <Label alignment="CENTER" text="Ordina su misura per te" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Arial Black" size="42.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="20.0" stylesheets="@../css/manager.css" VBox.vgrow="NEVER">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-1" spacing="10.0" />
+                              <VBox minWidth="300.0" spacing="15.0">
+                                 <children>
+                                    <Label text="Hai allergie o intolleranze alimentari?" textFill="#287271" wrapText="true">
+                                       <font>
+                                          <Font name="Arial Black" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <AnchorPane prefWidth="540.0">
+                                       <children>
+                                          <GridPane alignment="CENTER" hgap="15.0" vgap="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints />
+                                                <RowConstraints />
+                                             </rowConstraints>
+                                             <children>
+                                                <ToggleButton fx:id="tbSulphites" maxWidth="1.7976931348623157E308" minHeight="45.0" mnemonicParsing="false" prefHeight="45.0" styleClass="section-container" text="Anidride solfosa">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                   </font>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbPeanuts" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" minHeight="45.0" mnemonicParsing="false" prefHeight="45.0" styleClass="section-container" text="Arachidi" GridPane.rowIndex="5">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                   </font>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbGluten" layoutX="10.0" layoutY="68.0" maxWidth="1.7976931348623157E308" minHeight="45.0" mnemonicParsing="false" prefHeight="45.0" styleClass="section-container" text="Glutine" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                   </font>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbCrustaceans" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" minHeight="45.0" mnemonicParsing="false" prefHeight="45.0" styleClass="section-container" text="Crostacei" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                   </font>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbNuts" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" minHeight="45.0" mnemonicParsing="false" prefHeight="45.0" styleClass="section-container" text="Frutta a guscio" GridPane.rowIndex="3">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                   </font>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbMilk" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" minHeight="45.0" mnemonicParsing="false" prefHeight="45.0" styleClass="section-container" text="Latte e derivati" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                   </font>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbLupin" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" minHeight="45.0" mnemonicParsing="false" prefHeight="45.0" styleClass="section-container" text="Lupini" GridPane.rowIndex="6">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                   </font>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbMolluscs" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" minHeight="45.0" mnemonicParsing="false" prefHeight="45.0" styleClass="section-container" text="Molluschi" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                   </font>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbFish" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" minHeight="45.0" mnemonicParsing="false" prefHeight="45.0" styleClass="section-container" text="Pesce" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                   </font>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbCelery" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" minHeight="45.0" mnemonicParsing="false" prefHeight="45.0" styleClass="section-container" text="Sedano" GridPane.rowIndex="4">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                   </font>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbMustard" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" minHeight="45.0" mnemonicParsing="false" prefHeight="45.0" styleClass="section-container" text="Senape" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                   </font>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbSesame" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" minHeight="45.0" mnemonicParsing="false" prefHeight="45.0" styleClass="section-container" text="Sesamo" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                   </font>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbSoy" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" minHeight="45.0" mnemonicParsing="false" prefHeight="45.0" styleClass="section-container" text="Soia" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                   </font>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbEggs" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" minHeight="45.0" mnemonicParsing="false" prefHeight="45.0" styleClass="section-container" text="Uova" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                   </font>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ToggleButton>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <Region minHeight="15.0" VBox.vgrow="SOMETIMES" />
+                        <VBox alignment="CENTER" spacing="20.0" VBox.vgrow="NEVER">
+                           <children>
+                              <Button fx:id="btnNextThird" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minHeight="50.0" mnemonicParsing="false" onAction="#onNextThird" prefHeight="50.0" styleClass="normalBtn">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label text="Avanti" textAlignment="CENTER" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </VBox>
+                        <Region minHeight="10.0" />
+                     </children>
+                     <BorderPane.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </BorderPane.margin>
+                  </VBox>
+               </center>
+            </BorderPane>
+            <BorderPane fx:id="fourthQuestionPane" prefWidth="450.0" styleClass="vbox-login" visible="false" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="130.0" AnchorPane.topAnchor="35.0">
+               <top>
+                  <HBox prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button fx:id="btnBackFourth" minHeight="40.0" minWidth="40.0" onAction="#onBackToThirdQuestion" style="-fx-background-color: transparent;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/back.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                     <padding>
+                        <Insets left="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </top>
+               <center>
+                  <VBox alignment="CENTER" minWidth="450.0" prefHeight="450.0" spacing="10.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox alignment="CENTER" spacing="10.0" VBox.vgrow="NEVER">
+                           <children>
+                              <Label alignment="CENTER" text="Ordina su misura per te" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Arial Black" size="42.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="20.0" stylesheets="@../css/manager.css" VBox.vgrow="NEVER">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-1" spacing="10.0" />
+                              <VBox minWidth="300.0" spacing="15.0">
+                                 <children>
+                                    <Label text="Vuoi che il tuo pasto rientri in un certo apporto calorico?" textFill="#287271" wrapText="true">
+                                       <font>
+                                          <Font name="Arial Black" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <ToggleButton fx:id="tbKcalLight" layoutX="10.0" layoutY="99.0" maxWidth="1.7976931348623157E308" minHeight="50.0" mnemonicParsing="false" prefHeight="50.0" styleClass="section-container">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <graphic>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label fx:id="lblKcalLight" text="Leggero (fino a 350 Kcal)" textFill="#8e8e8e">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="tbKcalModerate" layoutX="10.0" layoutY="164.0" maxWidth="1.7976931348623157E308" minHeight="50.0" mnemonicParsing="false" prefHeight="50.0" styleClass="section-container">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <graphic>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label fx:id="lblKcalModerate" text="Moderato (fino a 800 Kcal)" textFill="#8e8e8e">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="tbKcalComplete" layoutX="10.0" layoutY="229.0" maxWidth="1.7976931348623157E308" minHeight="50.0" mnemonicParsing="false" prefHeight="50.0" styleClass="section-container">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <graphic>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label fx:id="lblKcalComplete" text="Abbondante (fino a 1200 Kcal)" textFill="#8e8e8e">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="tbKcalNoLimit" maxWidth="1.7976931348623157E308" minHeight="50.0" mnemonicParsing="false" prefHeight="50.0" styleClass="section-container" text="Nessun limite">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ToggleButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <Region minHeight="15.0" VBox.vgrow="SOMETIMES" />
+                        <VBox alignment="CENTER" spacing="20.0" VBox.vgrow="NEVER">
+                           <children>
+                              <Button fx:id="btnNextFourth" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minHeight="50.0" mnemonicParsing="false" onAction="#onNextFourth" prefHeight="50.0" styleClass="normalBtn">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label text="Avanti" textAlignment="CENTER" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </VBox>
+                        <Region minHeight="10.0" />
+                     </children>
+                     <BorderPane.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </BorderPane.margin>
+                  </VBox>
+               </center>
+            </BorderPane>
+            <BorderPane fx:id="fifthQuestionPane" prefWidth="450.0" styleClass="vbox-login" visible="false" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="130.0" AnchorPane.topAnchor="35.0">
+               <top>
+                  <HBox prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button fx:id="btnBackFifth" minHeight="40.0" minWidth="40.0" onAction="#onBackToFourthQuestion" style="-fx-background-color: transparent;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/back.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                     <padding>
+                        <Insets left="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </top>
+               <center>
+                  <VBox alignment="CENTER" minWidth="450.0" prefHeight="450.0" spacing="10.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox alignment="CENTER" spacing="10.0" VBox.vgrow="NEVER">
+                           <children>
+                              <Label alignment="CENTER" text="Ordina su misura per te" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Arial Black" size="42.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="20.0" stylesheets="@../css/manager.css" VBox.vgrow="NEVER">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-1" spacing="10.0" />
+                              <VBox minWidth="300.0" spacing="15.0">
+                                 <children>
+                                    <Label text="Vuoi rimanere entro un certo budget per il tuo pasto?" textFill="#287271" wrapText="true">
+                                       <font>
+                                          <Font name="Arial Black" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <ToggleButton fx:id="tbBudgetEconomic" layoutX="10.0" layoutY="99.0" maxWidth="1.7976931348623157E308" minHeight="50.0" mnemonicParsing="false" prefHeight="50.0" styleClass="section-container">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <graphic>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label fx:id="lblBudgetEconomic" text="Economico (tra 15 e 30 €)" textFill="#8e8e8e">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="tbBudgetBalanced" layoutX="10.0" layoutY="99.0" maxWidth="1.7976931348623157E308" minHeight="50.0" mnemonicParsing="false" prefHeight="50.0" styleClass="section-container">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <graphic>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label fx:id="lblBudgetBalanced" text="Equilibrato (tra 45 e 60 €)" textFill="#8e8e8e">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="tbBudgetPremium" layoutX="10.0" layoutY="359.0" maxWidth="1.7976931348623157E308" minHeight="50.0" mnemonicParsing="false" prefHeight="50.0" styleClass="section-container">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <graphic>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label fx:id="lblBudgetPremium" text="Premium (tra 90 e 110 €)" textFill="#8e8e8e">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="20.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="tbBudgetNoLimit" maxWidth="1.7976931348623157E308" minHeight="50.0" mnemonicParsing="false" prefHeight="50.0" styleClass="section-container" text="Nessun limite">
+                                       <font>
+                                          <Font name="Arial Bold" size="20.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ToggleButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <Region minHeight="15.0" VBox.vgrow="SOMETIMES" />
+                        <VBox alignment="CENTER" spacing="20.0" VBox.vgrow="NEVER">
+                           <children>
+                              <Button fx:id="btnGenerate" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minHeight="50.0" mnemonicParsing="false" onAction="#onNextFifth" prefHeight="50.0" styleClass="normalBtn">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label text="Genera Proposte" textAlignment="CENTER" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </VBox>
+                        <Region minHeight="10.0" />
+                     </children>
+                     <BorderPane.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </BorderPane.margin>
+                  </VBox>
+               </center>
+            </BorderPane>
+            <BorderPane fx:id="proposePane" layoutX="140.0" layoutY="45.0" prefWidth="450.0" styleClass="vbox-login" visible="false" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="130.0" AnchorPane.topAnchor="35.0">
+               <top>
+                  <HBox prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                     <padding>
+                        <Insets left="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </top>
+               <center>
+                  <VBox alignment="CENTER" minWidth="450.0" prefHeight="450.0" spacing="10.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox alignment="CENTER" spacing="10.0" VBox.vgrow="NEVER">
+                           <children>
+                              <Label alignment="CENTER" text="Ordina su misura per te" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Arial Black" size="42.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="20.0" stylesheets="@../css/manager.css" VBox.vgrow="NEVER">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-1" spacing="10.0" />
+                              <VBox minWidth="300.0" spacing="15.0">
+                                 <children>
+                                    <Label text="Abbiamo pensato di proporti:" textFill="#287271" wrapText="true">
+                                       <font>
+                                          <Font name="Arial Black" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" minWidth="540.0" prefWidth="540.0">
+                                       <content>
+                                          <GridPane fx:id="menuGridPane" alignment="TOP_CENTER" hgap="10.0" styleClass="menu-grid" vgap="10.0">
+                                             <padding>
+                                                <Insets bottom="20.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </GridPane>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <Region minHeight="15.0" prefWidth="544.0" VBox.vgrow="SOMETIMES" />
+                        <VBox alignment="CENTER" spacing="20.0" VBox.vgrow="NEVER">
+                           <children>
+                              <Button fx:id="btnOrderSummary" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minHeight="50.0" mnemonicParsing="false" onAction="#onSummary" prefHeight="50.0" styleClass="normalBtn">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <Label text="Riepilogo ordine" textAlignment="CENTER" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </VBox>
+                        <Region minHeight="10.0" />
+                     </children>
+                     <BorderPane.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </BorderPane.margin>
+                  </VBox>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+      <VBox alignment="TOP_RIGHT" GridPane.columnIndex="2">
+         <children>
+            <HBox alignment="CENTER_RIGHT" minHeight="150.0" prefHeight="150.0" spacing="15.0">
+               <children>
+                  <Button fx:id="btnCart" alignment="CENTER" contentDisplay="CENTER" minHeight="45.0" minWidth="100.0" mnemonicParsing="false" onAction="#onCartClicked" styleClass="btnCart" textAlignment="CENTER">
+                     <font>
+                        <Font name="Arial Bold" size="24.0" />
+                     </font>
+                     <graphic>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/receipt.png" />
+                                 </image>
+                              </ImageView>
+                              <Label contentDisplay="CENTER" text="ORDINE" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnAccount" alignment="CENTER" contentDisplay="CENTER" layoutX="261.0" layoutY="63.0" minHeight="45.0" minWidth="100.0" mnemonicParsing="false" onAction="#onAccountClicked" styleClass="btnAccount" stylesheets="@../css/customer.css" textAlignment="CENTER">
+                     <font>
+                        <Font name="Arial Bold" size="24.0" />
+                     </font>
+                     <graphic>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label fx:id="lblUserInitials1" contentDisplay="CENTER">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </Label>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/account.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="lblUserInitials" contentDisplay="CENTER">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </HBox>
+            <Region prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </VBox>
+   </children>
+</GridPane>

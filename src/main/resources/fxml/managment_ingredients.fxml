@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1140.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.foodmood.view.ui.gui.manager.GuiManagmentIngredients">
+   <children>
+      <AnchorPane fx:id="paneList" prefHeight="810.0" prefWidth="1140.0" stylesheets="@../css/manager.css">
+         <children>
+            <AnchorPane stylesheets="@../css/manager.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+               <styleClass>
+                  <String fx:value="white-bg" />
+                  <String fx:value="radius" />
+                  <String fx:value="shadow" />
+               </styleClass>
+            </AnchorPane>
+            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" stylesheets="@../css/manager.css" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <content>
+                  <VBox alignment="TOP_CENTER" fillWidth="true" spacing="15.0">
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                     <children>
+                        <VBox spacing="5.0">
+                           <children>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <Label text="GESTIONE " textFill="#264653" wrapText="true">
+                                             <font>
+                                                <Font name="Arial Black" size="36.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="INGREDIENTI" textFill="#264653" wrapText="true">
+                                             <font>
+                                                <Font name="Arial Black" size="36.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" fillHeight="true" spacing="10.0">
+                                       <children>
+                                          <VBox alignment="CENTER_LEFT" spacing="10.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="Ricerca:" wrapText="true">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="tfSearchIngredient" maxWidth="1.7976931348623157E308" minHeight="40.0" onAction="#onSearchIngredient" promptText="Cerca ingrediente per nome" styleClass="form">
+                                                   <font>
+                                                      <Font name="Arial" size="14.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </VBox>
+                                          <HBox alignment="BOTTOM_LEFT" spacing="10.0" HBox.hgrow="NEVER">
+                                             <children>
+                                                <Button fx:id="btnNewIngredient" minWidth="150.0" onAction="#onAddNewIngredient" prefHeight="40.0" prefWidth="200.0" styleClass="btn-add" text="AGGIUNGI INGREDIENTE">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="12.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button fx:id="btnModifyIngredient" minWidth="150.0" onAction="#onModifyIngredient" prefHeight="40.0" prefWidth="200.0" styleClass="btn-modify" text="MODIFICA INGREDIENTE">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="12.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button fx:id="btnDeleteIngredient" minWidth="150.0" onAction="#onDeleteIngredient" prefHeight="40.0" prefWidth="200.0" styleClass="btn-remove" text="RIMUOVI INGREDIENTE" textAlignment="CENTER">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="12.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                    <TableView fx:id="tableIngredients" prefHeight="600.0">
+                                       <columns>
+                                          <TableColumn fx:id="colName" prefWidth="200.0" text="Nome" />
+                                          <TableColumn fx:id="colUnit" prefWidth="200.0" text="Unità" />
+                                          <TableColumn fx:id="colKcal" prefWidth="200.0" text="kcal/100" />
+                                          <TableColumn fx:id="colMacros" prefWidth="200.0" text="Carb/Prot/Grassi" />
+                                          <TableColumn fx:id="colAllergens" prefWidth="200.0" text="Allergeni" />
+                                       </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </TableView>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="paneForm" managed="false" prefHeight="810.0" prefWidth="1140.0" stylesheets="@../css/manager.css" visible="false">
+         <children>
+            <AnchorPane layoutX="15.0" layoutY="15.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+               <styleClass>
+                  <String fx:value="white-bg" />
+                  <String fx:value="radius" />
+                  <String fx:value="shadow" />
+               </styleClass>
+            </AnchorPane>
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <content>
+                  <VBox alignment="TOP_CENTER" spacing="15.0">
+                     <children>
+                        <VBox spacing="5.0">
+                           <children>
+                              <Label text="AGGIUNGI NUOVO INGREDIENTE" textFill="#264653" wrapText="true">
+                                 <font>
+                                    <Font name="Arial Black" size="36.0" />
+                                 </font>
+                              </Label>
+                              <HBox spacing="20.0">
+                                 <children>
+                                    <VBox maxWidth="1.7976931348623157E308" minWidth="200.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label text="Nome ingrediente *">
+                                             <font>
+                                                <Font name="Arial Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="tfIngredientName" maxWidth="1.7976931348623157E308" minHeight="40.0" promptText="Inserisci il nome dell'ingrediente" styleClass="form">
+                                             <font>
+                                                <Font name="Arial" size="15.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                             </cursor>
+                                          </TextField>
+                                       </children>
+                                    </VBox>
+                                    <VBox minWidth="200.0" spacing="10.0" HBox.hgrow="NEVER">
+                                       <children>
+                                          <Label text="Unità di riferimento *">
+                                             <font>
+                                                <Font name="Arial Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="cbUnit" maxWidth="1.7976931348623157E308" minHeight="40.0" promptText="Seleziona unità" styleClass="section-container" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Label text="Valori nutrizionali" textFill="#287271">
+                                 <font>
+                                    <Font name="Arial Black" size="24.0" />
+                                 </font>
+                              </Label>
+                              <HBox spacing="20.0">
+                                 <children>
+                                    <VBox maxWidth="1.7976931348623157E308" minWidth="150.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label text="Carboidrati *">
+                                             <font>
+                                                <Font name="Arial Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="tfCarbohydrates" maxWidth="1.7976931348623157E308" minHeight="40.0" promptText="0.0" styleClass="form">
+                                             <font>
+                                                <Font name="Arial" size="15.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                             </cursor>
+                                          </TextField>
+                                       </children>
+                                    </VBox>
+                                    <VBox maxWidth="1.7976931348623157E308" minWidth="150.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label text="Proteine *">
+                                             <font>
+                                                <Font name="Arial Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="tfProtein" maxWidth="1.7976931348623157E308" minHeight="40.0" promptText="0.0" styleClass="form">
+                                             <font>
+                                                <Font name="Arial" size="15.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                             </cursor>
+                                          </TextField>
+                                       </children>
+                                    </VBox>
+                                    <VBox maxWidth="1.7976931348623157E308" minWidth="150.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label text="Grassi *">
+                                             <font>
+                                                <Font name="Arial Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="tfFat" maxWidth="1.7976931348623157E308" minHeight="40.0" promptText="0.0" styleClass="form">
+                                             <font>
+                                                <Font name="Arial" size="15.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                             </cursor>
+                                          </TextField>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox spacing="25.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <VBox minWidth="300.0" spacing="15.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label text="Allergeni" textFill="#287271">
+                                             <font>
+                                                <Font name="Arial Black" size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <AnchorPane styleClass="border-line" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <GridPane hgap="15.0" vgap="8.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="15.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <CheckBox fx:id="cbSulphites" mnemonicParsing="false" text="Anidride solfosa e solfiti" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                                         <font>
+                                                            <Font name="Arial" size="14.0" />
+                                                         </font>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cbPeanuts" mnemonicParsing="false" text="Arachidi" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                                         <font>
+                                                            <Font name="Arial" size="14.0" />
+                                                         </font>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cbGluten" mnemonicParsing="false" text="Cereali (glutine)" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                                         <font>
+                                                            <Font name="Arial" size="14.0" />
+                                                         </font>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cbCrustaceans" mnemonicParsing="false" text="Crostacei" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                                                         <font>
+                                                            <Font name="Arial" size="14.0" />
+                                                         </font>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cbNuts" mnemonicParsing="false" text="Frutta a guscio" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                                                         <font>
+                                                            <Font name="Arial" size="14.0" />
+                                                         </font>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cbMilk" mnemonicParsing="false" text="Latte e derivati" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                                                         <font>
+                                                            <Font name="Arial" size="14.0" />
+                                                         </font>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cbLupin" mnemonicParsing="false" text="Lupini" GridPane.columnIndex="0" GridPane.rowIndex="6">
+                                                         <font>
+                                                            <Font name="Arial" size="14.0" />
+                                                         </font>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cbMolluscs" mnemonicParsing="false" text="Molluschi" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                                         <font>
+                                                            <Font name="Arial" size="14.0" />
+                                                         </font>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cbFish" mnemonicParsing="false" text="Pesce" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                         <font>
+                                                            <Font name="Arial" size="14.0" />
+                                                         </font>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cbCelery" mnemonicParsing="false" text="Sedano" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                         <font>
+                                                            <Font name="Arial" size="14.0" />
+                                                         </font>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cbMustard" mnemonicParsing="false" text="Senape" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                         <font>
+                                                            <Font name="Arial" size="14.0" />
+                                                         </font>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cbSesame" mnemonicParsing="false" text="Sesamo" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                         <font>
+                                                            <Font name="Arial" size="14.0" />
+                                                         </font>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cbSoy" mnemonicParsing="false" text="Soia" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                         <font>
+                                                            <Font name="Arial" size="14.0" />
+                                                         </font>
+                                                      </CheckBox>
+                                                      <CheckBox fx:id="cbEggs" mnemonicParsing="false" text="Uova" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                                         <font>
+                                                            <Font name="Arial" size="14.0" />
+                                                         </font>
+                                                      </CheckBox>
+                                                   </children>
+                                                </GridPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </VBox>
+                                    <VBox maxWidth="380.0" minWidth="300.0" spacing="15.0" HBox.hgrow="NEVER">
+                                       <children>
+                                          <Label text="Riepilogo nutrizionale" textFill="#287271">
+                                             <font>
+                                                <Font name="Arial Black" size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <VBox spacing="0.0" styleClass="nutritional-summary">
+                                             <children>
+                                                <VBox alignment="CENTER" style="-fx-background-color: #287271; -fx-background-radius: 8 8 0 0;">
+                                                   <children>
+                                                      <Label text="Calorie totali" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="Arial" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <HBox alignment="CENTER" spacing="5.0">
+                                                         <children>
+                                                            <Label fx:id="lblTotalKcal" text="0" textFill="WHITE">
+                                                               <font>
+                                                                  <Font name="Arial Black" size="42.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label text="kcal" textFill="WHITE">
+                                                               <font>
+                                                                  <Font name="Arial" size="18.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="5.0" top="5.0" />
+                                                   </padding>
+                                                </VBox>
+                                                <VBox spacing="10.0">
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                   <children>
+                                                      <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                                         <children>
+                                                            <Region prefWidth="4.0" styleClass="carbohydrates" HBox.hgrow="NEVER">
+                                                               <HBox.margin>
+                                                                  <Insets />
+                                                               </HBox.margin>
+                                                            </Region>
+                                                            <VBox spacing="2.0" HBox.hgrow="ALWAYS">
+                                                               <children>
+                                                                  <Label text="Carboidrati">
+                                                                     <font>
+                                                                        <Font name="Arial" size="13.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <HBox alignment="BASELINE_LEFT" spacing="5.0">
+                                                                     <children>
+                                                                        <Label fx:id="lblTotalCarbohydrates" text="0" textFill="#2a9d8f">
+                                                                           <font>
+                                                                              <Font name="Arial Black" size="22.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Label text="g" textFill="#6c757d">
+                                                                           <font>
+                                                                              <Font name="Arial" size="14.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                                         <children>
+                                                            <Region prefWidth="4.0" styleClass="proteins" HBox.hgrow="NEVER" />
+                                                            <VBox spacing="2.0" HBox.hgrow="ALWAYS">
+                                                               <children>
+                                                                  <Label text="Proteine">
+                                                                     <font>
+                                                                        <Font name="Arial" size="13.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <HBox alignment="BASELINE_LEFT" spacing="5.0">
+                                                                     <children>
+                                                                        <Label fx:id="lblTotalProteins" text="0" textFill="#e9c46a">
+                                                                           <font>
+                                                                              <Font name="Arial Black" size="22.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Label text="g" textFill="#6c757d">
+                                                                           <font>
+                                                                              <Font name="Arial" size="14.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                                         <children>
+                                                            <Region prefWidth="4.0" styleClass="fats" HBox.hgrow="NEVER" />
+                                                            <VBox spacing="2.0" HBox.hgrow="ALWAYS">
+                                                               <children>
+                                                                  <Label text="Grassi">
+                                                                     <font>
+                                                                        <Font name="Arial" size="13.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <HBox alignment="BASELINE_LEFT" spacing="5.0">
+                                                                     <children>
+                                                                        <Label fx:id="lblTotalFats" text="0" textFill="#f4a261">
+                                                                           <font>
+                                                                              <Font name="Arial Black" size="22.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Label text="g" textFill="#6c757d">
+                                                                           <font>
+                                                                              <Font name="Arial" size="14.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <Separator>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" top="5.0" />
+                                                         </VBox.margin>
+                                                      </Separator>
+                                                      <VBox spacing="5.0">
+                                                         <children>
+                                                            <Label text="Allergeni presenti">
+                                                               <font>
+                                                                  <Font name="Arial Bold" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="lblAllergen" text="-" textFill="#495057" wrapText="true">
+                                                               <font>
+                                                                  <Font name="Arial" size="12.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" spacing="50.0" VBox.vgrow="NEVER">
+                                 <children>
+                                    <Button fx:id="btnSave" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onSaveIngredient" prefHeight="40.0" prefWidth="280.0" styleClass="btn-save-main">
+                                       <graphic>
+                                          <HBox alignment="CENTER" spacing="10.0">
+                                             <children>
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../icons/diskette.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label text="SALVA" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Arial Black" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button fx:id="btnCancel" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onCancelIngredient" prefHeight="40.0" prefWidth="280.0" styleClass="btn-cancel-main">
+                                       <graphic>
+                                          <HBox alignment="CENTER" spacing="10.0">
+                                             <children>
+                                                <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../icons/x-mark.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label text="ANNULLA" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Arial Black" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </graphic>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

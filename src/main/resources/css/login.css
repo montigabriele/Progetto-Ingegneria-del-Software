@@ -1,0 +1,158 @@
+.background {
+    -fx-background-image: url("../images/background.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+
+.loginBtn {
+    -fx-background-color: linear-gradient(to bottom, #77916f, #77916f);
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 30;
+    -fx-effect: dropshadow(gaussian, rgba(88, 129, 87, 0.3), 12, 0.25, 0, 4);
+}
+
+.loginBtn:hover {
+    -fx-background-color: transparent;
+    -fx-background-radius: 30;
+    -fx-text-fill: #588157;
+    -fx-border-color: #588157;
+    -fx-border-width: 2;
+    -fx-border-radius: 30;
+    -fx-effect: dropshadow(gaussian, rgba(88, 129, 87, 0.2), 8, 0.2, 0, 2);
+}
+
+/* NOSONAR */
+.loginBtn:pressed {
+    -fx-background-color: #6b8a60; 
+    -fx-text-fill: #ffffff;
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.3), 6, 0.2, 0, 1); 
+}
+
+
+.fidelityBtn {
+    -fx-background-color: linear-gradient(to bottom,  #e9c46a, #ddb558);
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 30;
+    -fx-effect: dropshadow(gaussian, rgba(88, 129, 87, 0.3), 12, 0.25, 0, 4);
+}
+
+.fidelityBtn:hover {
+    -fx-background-color: linear-gradient(to bottom right, #ddb558, #d1a647);
+    -fx-effect: dropshadow(gaussian, rgba(233, 196, 106, 0.45), 14, 0.35, 0, 5);
+}
+
+
+
+.vbox-login{
+    -fx-background-color: #ffffff;
+    -fx-background-radius:20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 25, 0.2, 0, 8);
+}
+
+.vbox-fidelity{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 30;
+    -fx-border-color: #E9C46A;
+    -fx-border-width: 2;
+    -fx-border-radius: 30;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 25, 0.2, 0, 8);
+}
+
+.credentials {
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 15;
+    -fx-border-color: #e9ecef;
+    -fx-border-radius: 15;
+    -fx-border-width: 1.5;
+}
+
+.credentials:focused {
+    -fx-border-color: #588157;
+    -fx-effect: dropshadow(gaussian, rgba(88, 129, 87, 0.15), 8, 0.2, 0, 0);
+}
+
+.registerBtn {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #f3ca52;
+    -fx-text-fill: #f3ca52;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(88, 129, 87, 0.15), 8, 0.2, 0, 2);
+}
+
+.registerBtn:hover {
+    -fx-background-color: #f3ca52;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #f3ca52;
+    -fx-border-width: 2;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-effect: dropshadow(gaussian, rgba(88, 129, 87, 0.25), 12, 0.25, 0, 3);
+}
+
+.registerBtn:pressed {
+    -fx-background-color: linear-gradient(to bottom, #f3ca52, #e6b93f);
+    -fx-text-fill: #ffffff;
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.25), 6, 0.2, 0, 1);
+}
+
+.guestBtn {
+    -fx-background-color: #f3ca52;
+    -fx-border-color: #f3ca52;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(88, 129, 87, 0.15), 8, 0.2, 0, 2);
+}
+
+.guestBtn:hover {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #f3ca52;
+    -fx-border-color: #f3ca52;
+    -fx-border-width: 2;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-effect: dropshadow(gaussian, rgba(88, 129, 87, 0.25), 12, 0.25, 0, 3);
+}
+
+.guestBtn:pressed {
+    -fx-background-color: linear-gradient(to bottom, #f3ca52, #e6b93f);
+    -fx-text-fill: #ffffff;
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.25), 6, 0.2, 0, 1);
+}
+
+.text-field,
+.text-field:focused,
+.password-field,
+.password-field:focused,
+.text-input,
+.text-input:focused {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-text-fill: #111827;
+    -fx-prompt-text-fill: #9ca3af;
+    -fx-font-size: 14px;
+}
+
+.logoutBtn {
+    -fx-background-color: linear-gradient(to bottom right, #e63946, #d62828);
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 30;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(214, 40, 40, 0.3), 12, 0.25, 0, 4);
+}
+
+.logoutBtn:hover {
+    -fx-background-color: linear-gradient(to bottom right, #d62828, #b71c1c);
+    -fx-effect: dropshadow(gaussian, rgba(233, 196, 106, 0.45), 14, 0.35, 0, 5);
+}
+
+.logoutBtn:pressed {
+    -fx-background-color: linear-gradient(to bottom, #b71c1c, #9e1414); 
+    -fx-text-fill: #ffffff;
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.35), 6, 0.25, 0, 1); 
+}
